@@ -23,6 +23,8 @@ KUSOREPLY
           condition: lambda{ |opt| opt.messages.all?(&:repliable?) },
           visible: true,
           role: :timeline) do |opt|
-    message.post(message: "today.setDinner(@#{message.user.idname}.getMoney().toYakiniku(Yakiniku.JOJO_EN));")
+    opt.messages.each { |message|
+      message.post(message: "today.setDinner(@#{message.user.idname}.getMoney().toYakiniku(Yakiniku.JOJO_EN));")
+    }
   end
 end
