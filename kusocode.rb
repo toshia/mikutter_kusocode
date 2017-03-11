@@ -24,4 +24,5 @@ KUSOREPLY
           visible: true,
           role: :timeline) do |opt|
     message.post(message: "today.setDinner(@#{message.user.idname}.getMoney().toYakiniku(Yakiniku.JOJO_EN));")
+  end
 end
