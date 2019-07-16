@@ -7,7 +7,7 @@ Plugin.create(:kusocode) do
           visible: true,
           role: :timeline) do |opt|
     opt.messages.each { |message|
-      message.post(message: <<"KUSOREPLY")
+      compose(opt.world, message, body: <<"KUSOREPLY")
 @#{message.user.idname}
 public final class Yaruki {
   public Yaruki() throws NullPointerException {
@@ -24,7 +24,7 @@ KUSOREPLY
           visible: true,
           role: :timeline) do |opt|
     opt.messages.each { |message|
-      message.post(message: "today.setDinner(@#{message.user.idname}.getMoney().toYakiniku(Yakiniku.JOJO_EN));")
+      compose(opt.world, message, body: "today.setDinner(@#{message.user.idname}.getMoney().toYakiniku(Yakiniku.JOJO_EN));")
     }
   end
 end
